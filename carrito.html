@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Tu carrito</title>
+</head>
+
+<body>
+    <nav class="header-carrito">
+        <a href="./index.html"><img class="logo" src="./assets/img/logo2.png" alt=""></a>
+    </nav>
+
+    <main class="contenedor-global-carrito">
+        <h2 class="titulo-seccion titulo-carrito">Carrito</h2>
+
+        <section class="contenedor-carrito">
+
+            <p class="carrito-vacio">Tu carrito está vacío!</p>
+
+            <article class="carrito-productos disabled">
+
+                <div class="carrito-producto">
+                    <img src="./assets/img/fullFace1.webp" alt="">
+                    <div class="carrito-producto-titulo">
+                        <p>Nombre</p>
+                        <h4>Modelo</h4>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <p>Cantidad</p>
+                        <strong>1</strong>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <p>$9000</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <p>Subtotal</p>
+                        <strong>$190000</strong>
+                    </div>
+                    <button class="carrito-producto-eliminar"><i class="fa-solid fa-trash"></i></button>
+                </div>
+
+                <div class="carrito-producto">
+                    <img src="./assets/img/fullFace1.webp" alt="">
+                    <div class="carrito-producto-titulo">
+                        <p>Nombre</p>
+                        <h4>Modelo</h4>
+                    </div>
+                    <div class="carrito-producto-cantidad">
+                        <p>Cantidad</p>
+                        <strong>1</strong>
+                    </div>
+                    <div class="carrito-producto-precio">
+                        <p>$9000</p>
+                    </div>
+                    <div class="carrito-producto-subtotal">
+                        <p>Subtotal</p>
+                        <strong>$190000</strong>
+                    </div>
+                    <button class="carrito-producto-eliminar"><i class="fa-solid fa-trash"></i></button>
+                </div>
+
+                <div class="carrito-acciones disabled">
+                    <div class="accion-izquierda">
+                        <button class="accion-vaciar">Vaciar Carrito</button>
+                    </div>
+                    <div class="accion-derecha">
+                        <div class="carrito-accion-total">
+                            <p>Total:</p>
+                            <p id="total-carrito">$4000</p>
+                        </div>
+                        <button class="accion-comprar">Comprar ahora</button>
+                    </div>
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
