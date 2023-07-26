@@ -32,14 +32,17 @@ header {
     gap: 1rem;
 }
 
-.nav-list li a {
+.nav-list li button {
     text-decoration: none;
     color: white;
+    background-color: transparent;
+    border: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
+    cursor: pointer;
 }
 
-.nav-list li a:hover {
+.nav-list li button:hover {
     transition: all .3s;
     color: rgb(110, 108, 108);
 }
