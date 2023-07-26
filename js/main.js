@@ -203,6 +203,7 @@ const productos = [
 
 //Elementos del DOM
 const contenedorProductos = document.querySelector("#contenedor-productos");
+const botonesCategorias = document.querySelectorAll(".boton-categoria")
 
 //Agrego productos al HTML
 function cargarProductos() {
