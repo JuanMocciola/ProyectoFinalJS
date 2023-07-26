@@ -278,6 +278,9 @@ function agregarAlCarrito (e) {
 
     actualizarNumero ();
 
+    //Local storage
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
 }
 
 //Se suma la cantidad de productos en carrito
