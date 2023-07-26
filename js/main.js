@@ -21,7 +21,7 @@ const productos = [
         imagen: "../assets/img/fullFace1.webp",
         categoria: {
             nombre: "Full face",
-            id: "full face"
+            id: "fullFace"
         },
         precio: 6000
     },
@@ -31,7 +31,7 @@ const productos = [
         imagen: "../assets/img/fullFace2.webp",
         categoria: {
             nombre: "Full face",
-            id: "full face"
+            id: "fullFace"
         },
         precio: 6000
     },
@@ -41,7 +41,7 @@ const productos = [
         imagen: "../assets/img/fullFace3.webp",
         categoria: {
             nombre: "Full face",
-            id: "full face"
+            id: "fullFace"
         },
         precio: 6000
     },
@@ -51,7 +51,7 @@ const productos = [
         imagen: "../assets/img/fullFace4.webp",
         categoria: {
             nombre: "Full face",
-            id: "full face"
+            id: "fullFace"
         },
         precio: 6000
     },
@@ -61,7 +61,7 @@ const productos = [
         imagen: "../assets/img/fullFace5.webp",
         categoria: {
             nombre: "Full face",
-            id: "full face"
+            id: "fullFace"
         },
         precio: 6000
     },
@@ -71,7 +71,7 @@ const productos = [
         imagen: "../assets/img/fullFace6.webp",
         categoria: {
             nombre: "Full face",
-            id: "full face"
+            id: "fullFace"
         },
         precio: 6000
     },
@@ -145,7 +145,7 @@ const productos = [
         imagen: "../assets/img/offRoad1.avif",
         categoria: {
             nombre: "Off road",
-            id: "off road"
+            id: "offRoad"
         },
         precio: 7000
     },
@@ -155,7 +155,7 @@ const productos = [
         imagen: "../assets/img/offRoad2.avif",
         categoria: {
             nombre: "Off road",
-            id: "off road"
+            id: "offRoad"
         },
         precio: 7000
     },
@@ -165,7 +165,7 @@ const productos = [
         imagen: "../assets/img/offRoad3.avif",
         categoria: {
             nombre: "Off road",
-            id: "off road"
+            id: "offRoad"
         },
         precio: 7000
     },
@@ -175,7 +175,7 @@ const productos = [
         imagen: "../assets/img/offRoad4.avif",
         categoria: {
             nombre: "Off road",
-            id: "off road"
+            id: "offRoad"
         },
         precio: 7000
     },
@@ -185,7 +185,7 @@ const productos = [
         imagen: "../assets/img/offRoad5.avif",
         categoria: {
             nombre: "Off road",
-            id: "off road"
+            id: "offRoad"
         },
         precio: 7000
     },
@@ -195,7 +195,7 @@ const productos = [
         imagen: "../assets/img/offRoad6.avif",
         categoria: {
             nombre: "Off road",
-            id: "off road"
+            id: "offRoad"
         },
         precio: 7000
     },
@@ -206,8 +206,10 @@ const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria")
 
 //Agrego productos al HTML
-function cargarProductos() {
-    productos.forEach(producto => {
+function cargarProductos(productosElegidos) {
+    contenedorProductos.innerHTML = "";
+
+    productosElegidos.forEach(producto => {
         const div = document.createElement("div");
         div.classList.add("card");
         div.innerHTML = `
@@ -225,4 +227,16 @@ function cargarProductos() {
     })
 }
 
-cargarProductos();
+cargarProductos(productos);
+
+//Le agrego un evento a mis botones de tipos de casco para que filtren los tipos
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+        if(e.currentTarget.id != "todos"){
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+            cargarProductos(productosBoton);
+        }else{
+        cargarProductos(productos);
+        }
+    })
+});
