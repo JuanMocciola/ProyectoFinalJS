@@ -204,6 +204,7 @@ const productos = [
 //Elementos del DOM
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria")
+const tituloSeccion = document.querySelector("#titulo-seccion");
 
 //Agrego productos al HTML
 function cargarProductos(productosElegidos) {
@@ -218,7 +219,7 @@ function cargarProductos(productosElegidos) {
         </div>
         <div class="card-text">
             <h3>${producto.titulo}</h3>
-            <p>$${producto.precio}/p>
+            <p>$${producto.precio}</p>
             <button id="${producto.id}" ><i class="fa-solid fa-basket-shopping"></i>Agregar</button>
         </div>
         `;
@@ -233,10 +234,16 @@ cargarProductos(productos);
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
         if(e.currentTarget.id != "todos"){
+            //Para que se cambie el titulo dependiente de el tipo de casco
+            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
+            tituloSeccion.innerText = productoCategoria.categoria.nombre;
+
+            //Para que se filtre los tipos de casco
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
             cargarProductos(productosBoton);
         }else{
-        cargarProductos(productos);
+            tituloSeccion.innerText = "Todos los productos"
+            cargarProductos(productos);
         }
     })
 });
