@@ -5,66 +5,67 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Prompt', sans-serif; */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* nav-bar inicia */
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 40px;
     padding: 2rem;
-    background-color:transparent;
+    background-color: transparent;
     height: 90px;
 }
 
-.logo{
+.logo {
     width: 6rem;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     list-style: none;
     gap: 1rem;
 }
 
-.nav-list li a{
+.nav-list li a {
     text-decoration: none;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
 }
 
-.nav-list li a:hover{
+.nav-list li a:hover {
     transition: all .3s;
     color: rgb(110, 108, 108);
 }
 
-.carrito{
+.carrito {
     font-size: 1.3rem;
     color: #f1f1ff;
     cursor: pointer;
 }
 
 .abrir-menu,
-.cerrar-menu{
+.cerrar-menu {
     display: none;
 }
+
 /* nav-bar termina */
 
-.contenedor-global{
+.contenedor-global {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/fondo2.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
-    height:58rem;
+    height: 58rem;
 }
 
-.hero{
+.hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,18 +73,18 @@ header{
     height: 100%;
 }
 
-.hero img{
+.hero img {
     width: 30rem;
 }
 
-.hero h1{
+.hero h1 {
     font-size: 2.2rem;
     text-transform: uppercase;
     color: white;
     font-family: 'Prompt', sans-serif;
 }
 
-.hero p{
+.hero p {
     font-size: 1rem;
     text-transform: uppercase;
     color: white;
@@ -101,10 +102,14 @@ header{
 
 
 
+
+
+
 /* Nav responsive */
 @media screen and (max-width: 550px) {
+
     .abrir-menu,
-    .cerrar-menu{
+    .cerrar-menu {
         display: block;
         border: 0;
         font-size: 1.25rem;
@@ -112,11 +117,11 @@ header{
         cursor: pointer;
     }
 
-    .cerrar-menu{
+    .cerrar-menu {
         color: white;
     }
 
-    .nav{
+    .nav {
         opacity: 0;
         visibility: hidden;
 
@@ -140,12 +145,12 @@ header{
         transition: all .4s;
     }
 
-    .nav-list{
+    .nav-list {
         flex-direction: column;
         align-items: end;
     }
 
-    .nav-list li a{
+    .nav-list li a {
         color: white;
     }
 }
