@@ -199,5 +199,29 @@ const productos = [
         },
         precio: 7000
     },
-]
+];
 
+//Elementos del DOM
+const contenedorProductos = document.querySelector("#contenedor-productos");
+
+//Agrego productos al HTML
+function cargarProductos() {
+    productos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("card");
+        div.innerHTML = `
+        <div class="card-img">
+            <img src="${producto.imagen}" alt="${producto.titulo}">
+        </div>
+        <div class="card-text">
+            <h3>${producto.titulo}</h3>
+            <p>$${producto.precio}/p>
+            <button id="${producto.id}" ><i class="fa-solid fa-basket-shopping"></i>Agregar</button>
+        </div>
+        `;
+
+        contenedorProductos.append(div);
+    })
+}
+
+cargarProductos();
