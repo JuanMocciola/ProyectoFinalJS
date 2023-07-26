@@ -205,6 +205,8 @@ const productos = [
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria")
 const tituloSeccion = document.querySelector("#titulo-seccion");
+let botonesAgregar = document.querySelectorAll(".boton-agregar");
+const numero = document.querySelector("#numero");
 
 //Agrego productos al HTML
 function cargarProductos(productosElegidos) {
@@ -220,17 +222,19 @@ function cargarProductos(productosElegidos) {
         <div class="card-text">
             <h3>${producto.titulo}</h3>
             <p>$${producto.precio}</p>
-            <button id="${producto.id}" ><i class="fa-solid fa-basket-shopping"></i>Agregar</button>
+            <button class="boton-agregar" id="${producto.id}" ><i class="fa-solid fa-basket-shopping"></i>Agregar</button>
         </div>
         `;
 
         contenedorProductos.append(div);
+
+        actualizarBotonesAgregar();
     })
 }
 
 cargarProductos(productos);
 
-//Le agrego un evento a mis botones de tipos de casco para que filtren los tipos
+//Le agrego un evento a mis botones de tipos de casco
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
         if(e.currentTarget.id != "todos"){
@@ -247,3 +251,37 @@ botonesCategorias.forEach(boton => {
         }
     })
 });
+
+//Botones Agregar
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll(".boton-agregar");
+
+    botonesAgregar.forEach (boton => {
+        boton.addEventListener("click", agregarAlCarrito)
+    });
+}
+
+const productosEnCarrito = [];
+
+//Agregar al carrito
+function agregarAlCarrito (e) {
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = productos.find(producto => producto.id === idBoton);
+
+    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+        productosEnCarrito[index].cantidad++;
+    }else{
+    productoAgregado.cantidad = 1;
+    productosEnCarrito.push(productoAgregado);
+    }
+
+    actualizarNumero ();
+
+}
+
+//Se suma la cantidad de productos en carrito
+function actualizarNumero () {
+    let Nuevonumero = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numero.innerText = Nuevonumero;
+}

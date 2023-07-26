@@ -48,9 +48,17 @@ header {
 }
 
 .carrito {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #f1f1ff;
     cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+.numero{
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8125em;
 }
 
 .abrir-menu,
