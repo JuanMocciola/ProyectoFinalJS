@@ -261,7 +261,17 @@ function actualizarBotonesAgregar() {
     });
 }
 
-const productosEnCarrito = [];
+//Productos en carrito al Local storage
+let productosEnCarrito;
+
+let productosEnCarritoLS = localStorage.getItem("procuctos-en-carrito");
+
+if(productosEnCarritoLS) {
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
+    actualizarNumero ();
+}else {
+    productosEnCarrito= [];
+}
 
 //Agregar al carrito
 function agregarAlCarrito (e) {

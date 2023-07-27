@@ -21,51 +21,12 @@
 
         <section class="contenedor-carrito">
 
-            <p class="carrito-vacio">Tu carrito está vacío!</p>
+            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío!</p>
 
-            <article class="carrito-productos disabled">
-
-                <div class="carrito-producto">
-                    <img src="./assets/img/fullFace1.webp" alt="">
-                    <div class="carrito-producto-titulo">
-                        <p>Nombre</p>
-                        <h4>Modelo</h4>
-                    </div>
-                    <div class="carrito-producto-cantidad">
-                        <p>Cantidad</p>
-                        <strong>1</strong>
-                    </div>
-                    <div class="carrito-producto-precio">
-                        <p>$9000</p>
-                    </div>
-                    <div class="carrito-producto-subtotal">
-                        <p>Subtotal</p>
-                        <strong>$190000</strong>
-                    </div>
-                    <button class="carrito-producto-eliminar"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-                <div class="carrito-producto">
-                    <img src="./assets/img/fullFace1.webp" alt="">
-                    <div class="carrito-producto-titulo">
-                        <p>Nombre</p>
-                        <h4>Modelo</h4>
-                    </div>
-                    <div class="carrito-producto-cantidad">
-                        <p>Cantidad</p>
-                        <strong>1</strong>
-                    </div>
-                    <div class="carrito-producto-precio">
-                        <p>$9000</p>
-                    </div>
-                    <div class="carrito-producto-subtotal">
-                        <p>Subtotal</p>
-                        <strong>$190000</strong>
-                    </div>
-                    <button class="carrito-producto-eliminar"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-                <div class="carrito-acciones disabled">
+            <article id="carrito-productos" class="carrito-productos disabled">
+                <!-- aca se completa con el JS -->
+            </article>
+                <div id="carrito-acciones" class="carrito-acciones disabled">
                     <div class="accion-izquierda">
                         <button class="accion-vaciar">Vaciar Carrito</button>
                     </div>
@@ -78,8 +39,7 @@
                     </div>
                 </div>
 
-            </article>
-
+                <p id="carrito-comprado" class="disabled">Gracias por tu compra</p>
         </section>
 
     </main>
@@ -88,8 +48,7 @@
 
 
 
-
-    <script src="./js/main.js"></script>
+    <script src="./js/carrito.js"></script>
 </body>
 
 </html>
