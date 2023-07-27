@@ -8,6 +8,8 @@ const contenedorCarritoAcciones = document.querySelector("#carrito-acciones");
 const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 let botonesEliminar = document.querySelectorAll("#eliminar-producto");
 const botonVaciar = document.querySelector(".accion-vaciar");
+const contenedorTotal = document.querySelector("#total-carrito");
+const botonComprar = document.querySelector(".accion-comprar");
 
 //Cuando el carrito tenga contenido muestra los items agregados y cuando este vacio muestra solamente un texto.
 function cargarProductosCarrito() {
@@ -52,6 +54,7 @@ function cargarProductosCarrito() {
         contenedorCarritoComprado.classList.add("disabled");
     }
     actualizarBotonesEliminar();
+    actualizarTotal();
 }
 
 cargarProductosCarrito();
@@ -60,7 +63,6 @@ cargarProductosCarrito();
 //Eliminar producto (icono)
 function actualizarBotonesEliminar() {
     botonesEliminar = document.querySelectorAll("#eliminar-producto");
-
     botonesEliminar.forEach (boton => {
         boton.addEventListener("click", eliminarDelCarrito);
     });
@@ -85,4 +87,23 @@ function vaciarCarrito () {
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
     //Llamo a la funcion para que se actualize el carrito
     cargarProductosCarrito();
+}
+
+//Precio Total
+function actualizarTotal() {
+    const totalCompra = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0 );
+    contenedorTotal.innerText = `$${totalCompra}`;
+}
+
+//Evento boton comprar
+botonComprar.addEventListener("click", comprarCarrito);
+//Funcionalidad boton comprar
+function comprarCarrito () {
+    productosEnCarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+    contenedorCarritoVacio.classList.add("disabled");
+    contenedorCarritoProductos.classList.add("disabled");
+    contenedorCarritoAcciones.classList.add("disabled");
+    contenedorCarritoComprado.classList.remove("disabled");
 }
