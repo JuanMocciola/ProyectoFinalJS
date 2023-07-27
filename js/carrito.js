@@ -7,8 +7,9 @@ const contenedorCarritoProductos = document.querySelector("#carrito-productos");
 const contenedorCarritoAcciones = document.querySelector("#carrito-acciones");
 const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 let botonesEliminar = document.querySelectorAll("#eliminar-producto");
+const botonVaciar = document.querySelector(".accion-vaciar");
 
-
+//Cuando el carrito tenga contenido muestra los items agregados y cuando este vacio muestra solamente un texto.
 function cargarProductosCarrito() {
     if (productosEnCarrito && productosEnCarrito.length > 0) {
         contenedorCarritoVacio.classList.add("disabled");
@@ -73,4 +74,15 @@ function eliminarDelCarrito(e) {
     cargarProductosCarrito();
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
+}
+
+//Evento boton vaciar carrito
+botonVaciar.addEventListener("click", vaciarCarrito);
+
+//Funcionalidad boton vaciar carrito
+function vaciarCarrito () {
+    productosEnCarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    //Llamo a la funcion para que se actualize el carrito
+    cargarProductosCarrito();
 }
