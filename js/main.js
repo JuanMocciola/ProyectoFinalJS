@@ -12,6 +12,17 @@ cerrar.addEventListener("click", () => {
 })
 //NAV-BAR termina
 
+
+//Mis productos desde el JSON
+let productos = [];
+
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
+
 //Elementos del DOM
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria")
@@ -42,8 +53,6 @@ function cargarProductos(productosElegidos) {
         actualizarBotonesAgregar();
     })
 }
-
-cargarProductos(productos);
 
 //Le agrego un evento a mis botones de tipos de casco
 botonesCategorias.forEach(boton => {
