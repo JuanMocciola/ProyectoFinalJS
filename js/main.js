@@ -106,6 +106,22 @@ function agregarAlCarrito (e) {
     productosEnCarrito.push(productoAgregado);
     }
 
+    //Alerta cuando toco agregar
+    Toastify({
+        text: "Producto agregado!",
+        duration: 3000,
+        destination: "../carrito.html",
+        newWindow: false,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+        background: "linear-gradient(to right, #000000, #808080)",
+        },
+        onClick: function(){}
+      }).showToast();
+
     actualizarNumero ();
 
     //Local storage

@@ -328,6 +328,13 @@ font-family: 'Prompt', sans-serif; */
     border-bottom-right-radius: 90px;
 }
 
+#carrito-comprado{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #30302b;
+}
+
 .accion-comprar:hover {
     background-color: #1b1b1a;
 }
@@ -344,6 +351,11 @@ font-family: 'Prompt', sans-serif; */
     display: none;
 }
 
+/* fuente para la alerta de compra */
+.custom-font {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+  }
 
 
 
