@@ -69,7 +69,7 @@ font-family: 'Prompt', sans-serif; */
 /* nav-bar termina */
 
 .contenedor-global {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/fondo2.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/fondo4.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
