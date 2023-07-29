@@ -110,7 +110,6 @@ function agregarAlCarrito (e) {
     Toastify({
         text: "Producto agregado!",
         duration: 3000,
-        destination: "./carrito.html",
         newWindow: false,
         close: true,
         gravity: "top",
